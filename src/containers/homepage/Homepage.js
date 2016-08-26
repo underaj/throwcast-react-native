@@ -32,8 +32,11 @@ class Homepage extends Component {
     const { stations, podcasts, actions, player, playlists } = this.props;
     return (
       <View style={s.outerContainer}>
-        <ScrollView>
-          <View style={s.innerContainer}>
+        <View style={s.header}>
+          <Navbar />
+        </View>
+        <ScrollView style={s.innerContainer}>
+          <View>
             <Text style={s.listTitle}>Stations</Text>
             <View style={s.scrollContainer}>
               <ScrollView automaticallyAdjustContentInsets={false} horizontal>
@@ -65,9 +68,6 @@ class Homepage extends Component {
             </View>
           </View>
         </ScrollView>
-        <View style={s.header}>
-          <Navbar />
-        </View>
         <View style={s.footer}>
           <PlayerSmallRemote />
         </View>

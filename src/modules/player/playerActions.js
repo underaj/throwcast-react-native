@@ -22,17 +22,6 @@ export function select(queueId, podcasts, currentIndex) {
   };
 }
 
-export function selectPodcast(queueId, podcasts, index, changePodcast) {
-  return (dispatch) => {
-    if (changePodcast) {
-      dispatch(playerInit());
-      dispatch(select(queueId, podcasts, index));
-    }
-
-    Actions.playerRemote();
-  };
-}
-
 export function togglePlay() {
   return {
     type: 'TOGGLE_PLAY',
@@ -42,6 +31,17 @@ export function togglePlay() {
 export function stopPlay() {
   return {
     type: 'STOP_PLAY',
+  };
+}
+
+export function selectPodcast(queueId, podcasts, index, changePodcast) {
+  return (dispatch) => {
+    if (changePodcast) {
+      dispatch(playerInit());
+      dispatch(select(queueId, podcasts, index));
+    }
+
+    Actions.playerRemote();
   };
 }
 
