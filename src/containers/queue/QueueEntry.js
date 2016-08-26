@@ -13,7 +13,7 @@ const QueueEntry = (
   let updateButton;
   let titleStyle;
   let changePodcast = false;
-  const onPress = () => selectPodcast(queue._id, queue.podcasts, index, changePodcast);
+  const onPress = () => selectPodcast(queue._id, queue.podcasts, Number(index), changePodcast);
   const addButton = {
     style: s.addButton,
     name: 'md-add',

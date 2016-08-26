@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Slider from 'react-native-slider';
 import { Actions } from 'react-native-router-flux';
 import * as Animatable from 'react-native-animatable';
+import Spinner from 'react-native-spinkit';
 
 import { formattedTime } from './utils';
 import { actions as playerActions } from '../../modules/player';
@@ -34,25 +35,33 @@ class PlayerRemote extends Component {
     const isFavorite = _.find(favorite.podcasts, { _id: podcastId });
     const pickColor = isFavorite ? 'purple' : '#FFF';
     let onPress;
+    let icon;
     if (favorite.pending) {
       onPress = null;
+      icon = <Spinner type="Wave" size={22} color="#FFFFFF" style={s.load} />;
     } else {
       onPress = isFavorite ?
       onPress = () => actions.deleteFavorite(favInfo) :
       onPress = () => actions.addFavorite(favInfo);
+      icon = (<Icon
+        name="md-checkbox"
+        marginLeft={100}
+        size={30}
+        color={pickColor}
+        onPress={onPress}
+      />);
     }
     return (
       <View style={s.addFavorite}>
         <Text style={s.title} marginRight={10}>Add as Favorite</Text>
         <View style={s.addIcon}>
-          <Icon name="md-checkbox" marginLeft={100} size={30} color={pickColor} onPress={onPress} />
+          {icon}
         </View>
       </View>
     );
   }
   renderInfo() {
     const { player, playerRemote } = this.props;
-    console.log(this.props);
     const index = player.currentIndex;
     const podcast = player.podcastList[index];
     return (

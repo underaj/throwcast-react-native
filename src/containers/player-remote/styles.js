@@ -111,6 +111,9 @@ const styles = StyleSheet.create({
     marginTop: 11,
     marginLeft: 45,
   },
+  load: {
+    marginTop: 4,
+  },
 });
 
 export default styles;
