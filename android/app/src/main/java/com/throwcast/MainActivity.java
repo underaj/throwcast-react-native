@@ -1,8 +1,9 @@
 package com.throwcast;
 
 import com.facebook.react.ReactActivity;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
-import com.brentvatne.RCTVideo.ReactVideoPackage;
+import com.brentvatne.react.ReactVideoPackage;
 
 public class MainActivity extends ReactActivity {
 

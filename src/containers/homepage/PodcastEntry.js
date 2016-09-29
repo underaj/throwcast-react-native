@@ -19,8 +19,8 @@ const PodcastEntry = ({ entry, selectPodcast, player }) => {
     <TouchableHighlight onPress={() => selectPodcast(entry._id, [entry], 0, changePodcast)}>
       <View style={s.box}>
         <Image source={{ uri: entry.image || DEFAULT_IMAGE, height: 120 }} />
-        <Text ellipsizeMode numberOfLines={1} style={s.title}>{entry.title}</Text>
-        <Text ellipsizeMode numberOfLines={1} style={s.description}>{entry.description}</Text>
+        <Text numberOfLines={1} style={s.title}>{entry.title}</Text>
+        <Text numberOfLines={1} style={s.description}>{entry.description}</Text>
       </View>
     </TouchableHighlight>
   );

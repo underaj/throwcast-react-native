@@ -22,8 +22,8 @@ const Entry = ({ entry, type, hideModal, selectPodcast, getQueue, searchClear })
     <Animatable.View animation="slideInLeft" duration={300} style={s.container} >
       <TouchableHighlight style={s.box} onPress={onPress}>
         <View style={s.info}>
-          <Text ellipsizeMode numberOfLines={2} style={s.title}>{entry.title}</Text>
-          <Text ellipsizeMode numberOfLines={2} style={s.description}>
+          <Text numberOfLines={2} style={s.title}>{entry.title}</Text>
+          <Text numberOfLines={2} style={s.description}>
             {type}
           </Text>
         </View>

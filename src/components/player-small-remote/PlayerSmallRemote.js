@@ -70,10 +70,10 @@ class PlayerSmallRemote extends Component {
         </View>
         <View style={s.infoContainer}>
           <Animatable.View animation={playerRemote.animation} duration={150} style={s.info}>
-            <Text ellipsizeMode numberOfLines={1} style={s.title}>
+            <Text numberOfLines={1} style={s.title}>
               {podcast.title}
             </Text>
-            <Text ellipsizeMode numberOfLines={1} style={s.description}>
+            <Text numberOfLines={1} style={s.description}>
               {podcast.description}
             </Text>
           </Animatable.View>

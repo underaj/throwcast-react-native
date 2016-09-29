@@ -54,8 +54,8 @@ const QueueEntry = props => {
       <View style={s.box}>
         <TouchableHighlight onPress={onPress}>
           <View style={s.info}>
-            <Text ellipsizeMode numberOfLines={2} style={titleStyle}>{podcast.title}</Text>
-            <Text ellipsizeMode numberOfLines={2} style={s.description}>{podcast.description}</Text>
+            <Text numberOfLines={2} style={titleStyle}>{podcast.title}</Text>
+            <Text numberOfLines={2} style={s.description}>{podcast.description}</Text>
           </View>
         </TouchableHighlight>
         {updateButton}

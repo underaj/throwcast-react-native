@@ -19,9 +19,8 @@ const Entry = ({ entry, podcast, updatePlaylist }) => (
   >
     <Animatable.View animation="slideInLeft" duration={300} style={s.box}>
       <View style={s.info}>
-        <Text ellipsizeMode numberOfLines={2} style={s.title}>{entry.title}</Text>
+        <Text numberOfLines={2} style={s.title}>{entry.title}</Text>
         <Text
-          ellipsizeMode
           numberOfLines={2}
           style={s.description}
         >

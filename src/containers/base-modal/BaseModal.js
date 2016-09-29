@@ -62,7 +62,8 @@ class BaseModal extends Component {
     const { loadModal, playlistModal, searchModal } = baseModal;
     const show = playlistModal || searchModal || loadModal;
     const container = show ? s.showContainer : s.hideContainer;
-    const innerContainer = playlistModal || searchModal ? this.renderInner(show, playlistModal, searchModal) : null;
+    const innerContainer = playlistModal ||
+      searchModal ? this.renderInner(show, playlistModal, searchModal) : null;
     const load = loadModal ? this.renderLoad() : null;
     return (
       <View style={container}>

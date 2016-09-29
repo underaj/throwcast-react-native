@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { Scene, Router, Actions, Modal } from 'react-native-router-flux';
 import store from 'react-native-simple-store';
@@ -11,7 +11,6 @@ import { SignIn, SignUp } from './components';
 import { BaseModal, Homepage, PlayerRemote, Queue, Profile } from './containers';
 import { actions as authActions } from './modules/auth';
 
-const RouterWithRedux = connect()(Router);
 const reduxStore = createStore(reducers, applyMiddleware(thunk));
 
 class App extends Component {
@@ -32,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={reduxStore}>
-        <RouterWithRedux>
+        <Router>
           <Scene key="modal" component={Modal} >
             <Scene key="root" hideNavBar>
               <Scene key="signIn" component={SignIn} type="reset" />
@@ -46,7 +45,7 @@ class App extends Component {
             </Scene>
             <Scene key="baseModal" component={BaseModal} />
           </Scene>
-        </RouterWithRedux>
+        </Router>
       </Provider>
     );
   }

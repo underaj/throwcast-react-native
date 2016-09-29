@@ -68,10 +68,10 @@ class PlayerRemote extends Component {
       <Animatable.View style={s.infoContainer} animation={playerRemote.animation} duration={100}>
         <Image style={s.image} source={{ uri: podcast.image }} />
         <View style={s.info}>
-          <Text ellipsizeMode numberOfLines={2} style={s.title}>
+          <Text numberOfLines={2} style={s.title}>
             {podcast.title}
           </Text>
-          <Text ellipsizeMode numberOfLines={2} style={s.description}>
+          <Text numberOfLines={2} style={s.description}>
             {podcast.description}
           </Text>
         </View>
